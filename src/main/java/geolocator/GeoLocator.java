@@ -23,6 +23,7 @@ public class GeoLocator {
     public GeoLocator() {}
 
     public GeoLocation getGeoLocation() throws IOException {
+        logger.info("RETURNING GEOLOCATION INFO");
         return getGeoLocation(null);
     }
 
@@ -31,6 +32,7 @@ public class GeoLocator {
         URL url = null;
         String s = new String();
         if (ipAddrOrHost != null) {
+            logger.info("URL PARSING");
             ipAddrOrHost = UrlEscapers.urlPathSegmentEscaper().escape(ipAddrOrHost);
             try {
                 logger.debug("It can be debug message");
